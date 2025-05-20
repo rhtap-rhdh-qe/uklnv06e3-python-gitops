@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: uklnv06e3-python-gitops
+  description: This is GitOps manifest for uklnv06e3-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=uklnv06e3-python
+    backstage.io/kubernetes-id: uklnv06e3-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: uklnv06e3-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:uklnv06e3-python
